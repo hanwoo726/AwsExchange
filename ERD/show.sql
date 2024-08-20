@@ -40,6 +40,14 @@ GROUP BY table_schema;
 
 create user 'abc11'@'%'
 
+select * from User;
+select * from Exchange;
+select * from ChatHistory;
+
+
+
+show tables;
+
 
 
 

@@ -38,6 +38,8 @@ FROM information_schema.TABLES
 WHERE table_schema = 'exchange'
 GROUP BY table_schema;
 
+create user 'abc11'@'%'
+
 
 
 

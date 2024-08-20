@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class AWSExchangeApplication {
+public class AwsExchangeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AWSExchangeApplication.class, args);
+        SpringApplication.run(AwsExchangeApplication.class, args);
     }
 
 }

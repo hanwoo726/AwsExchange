@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: AWSExchange
+    name: AwsExchange
 
   datasource:
     url: jdbc:mysql://localhost:3306/exchange

@@ -6,6 +6,7 @@ import com.lec.spring.domain.ExChange;
 import com.lec.spring.repository.ChangeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -26,8 +27,15 @@ public class ChangeService {
     }
 
     public void fetchDataAndSave() throws IOException {
-        String url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=55TnvkQvihWfjLkS2RLroNZoIpIKVmri&searchdate=&data=AP01";
-        String jsonResponse = restTemplate.getForObject(url, String.class);
+        String url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
+
+        String uri = UriComponentsBuilder.fromHttpUrl(url)
+                .queryParam("authkey", "55TnvkQvihWfjLkS2RLroNZoIpIKVmri")
+                .queryParam("searchdate","")
+                .queryParam("data", "AP01")
+                .toUriString();
+
+        String jsonResponse = restTemplate.getForObject(uri, String.class);
 
         // JSON 배열을 List<ExChange>로 변환
         List<ExChange> exchangeData = filterExchangeData(jsonResponse);

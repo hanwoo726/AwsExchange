@@ -6,7 +6,7 @@ spring:
     name: AwsExchange
 
   datasource:
-    url: jdbc:mysql://43.203.228.211:3306/exchange
+    url: jdbc:mysql://3.34.139.50:3306/exchange
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: abc11
     password: 1234

@@ -23,6 +23,8 @@ class UserRepositoryTest {
         user.setPassword(passwordEncoder.encode("1234"));
 
 
+
+
         System.out.println("영속성 전" + user.toString());
 
         userRepository.save(user);

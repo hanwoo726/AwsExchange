@@ -41,12 +41,15 @@ GROUP BY table_schema;
 create user 'abc11'@'%'
 
 select * from User;
-select * from Exchange;
+select * from ExChange;
 select * from ChatHistory;
+SHOW TABLES;
 
 
 
 show tables;
+
+select * from ExChange;
 
 
 

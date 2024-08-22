@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lec.spring.domain.ExChange;
 import com.lec.spring.repository.ChangeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -20,6 +21,7 @@ public class ChangeService {
     private final ObjectMapper objectMapper;
     private final ChangeRepository changeRepository;
 
+    @Autowired
     public ChangeService(RestTemplate restTemplate, ObjectMapper objectMapper, ChangeRepository changeRepository) throws Exception{
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;

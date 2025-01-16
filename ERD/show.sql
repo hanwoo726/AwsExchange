@@ -20,8 +20,8 @@ update exchange
 where id = 27
 ;
 
-DELETE FROM exchange
-    where id = 84;
+DELETE FROM Exchange
+    where id = ;
 
 TRUNCATE TABLE exchange;
 

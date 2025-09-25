@@ -1,10 +1,7 @@
 package com.lec.spring.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -13,6 +10,7 @@ import lombok.*;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@Table(name = "exchange")
 public class ExChange extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

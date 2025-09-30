@@ -13,6 +13,8 @@ public class ChangeController {
 
     @Autowired
     ChangeService changeService;
+    
+    //테스트 주석
 
     // 데이터베이스에 JSON 데이터 저장
     @CrossOrigin

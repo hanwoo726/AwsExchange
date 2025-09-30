@@ -38,7 +38,9 @@ public class ChatHandler extends TextWebSocketHandler {
         }
 
         for(WebSocketSession sess: list){
-            sess.sendMessage(message);
+            if(sess.isOpen() && !sess.getId().equals(session.getId())) {
+                sess.sendMessage(message);
+            }
         }
 
     }

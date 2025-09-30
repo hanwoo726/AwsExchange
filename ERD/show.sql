@@ -27,3 +27,9 @@ CREATE TABLE user (
                       year TEXT,
                       role VARCHAR(255)
 );
+
+INSERT INTO user (id, name, password, username, year, role) VALUES
+                                                                           (2, 'admin', '1313', '관리자', '990726', 'ROLE_ADMIN');
+
+insert into chathistory (id, message, timestamp, username) VALUES
+                                                               (1,'테스트',now(),'테스트용')

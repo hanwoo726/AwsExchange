@@ -27,4 +27,4 @@ jwt:
   secret: <|>s{b)?Xw.g={41O7AU-Bi"wQa}zrDO
 
 cors:
-  allowed-origins: http://localhost:3000,http://localhost:3001,http://3.34.139.50:3000,http://3.35.234.100:8080
+  allowed-origins: http://localhost:3000,http://localhost:3001,http://13.209.35.239:3000,http://13.209.35.239:8080

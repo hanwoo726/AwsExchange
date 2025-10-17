@@ -53,6 +53,7 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ![img_2.png](img_2.png)
 ```
 bind-address = 0.0.0.0
+:wq     # 저장 후 종료
 ```
 
 ### 2️⃣ MySQL 재시작
@@ -61,10 +62,24 @@ sudo systemctl restart mysql
 ```
 
 ### 3️⃣ root 계정 외부 접속 허용
+### 👤 MySQL 전용 계정 생성 및 권한 부여
+
+운영과 보안을 위해 root 계정이 아닌, 별도 사용자 계정을 생성하여  
+Spring Boot 애플리케이션에서 사용할 DB 계정을 분리했습니다.
+
 ```sql
-ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '비밀번호';
+-- 계정 생성
+CREATE USER 'abc11'@'%' IDENTIFIED BY '1234';
+
+-- 모든 DB에 대한 권한 부여 (CRUD 가능)
+GRANT ALL PRIVILEGES ON *.* TO 'abc11'@'%';
+
+-- 권한 적용
 FLUSH PRIVILEGES;
 ```
+
+해당 계정은 IntelliJ (Spring Boot)에서 데이터베이스 연결 및  
+JPA 기반 삽입/수정/삭제에 사용됩니다.
 
 이번 프로젝트는 개인프로젝트로 REACT와 JPA를 활용한 하루 환율 주기 사이트를 진행해보았습니다.
 AWS EC2 인스턴스를 생성하여 서버를 열었고 MobaXterm 터미널에 

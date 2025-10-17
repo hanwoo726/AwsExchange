@@ -78,6 +78,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'abc11'@'%';
 FLUSH PRIVILEGES;
 ```
 
+이제 인텔리제이 실행 후 SQL 연결
+
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
+
+연결 성공
+
 해당 계정은 IntelliJ (Spring Boot)에서 데이터베이스 연결 및  
 JPA 기반 삽입/수정/삭제에 사용됩니다.
 

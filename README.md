@@ -47,10 +47,10 @@ AWS EC2에 설치된 MySQL에 외부에서 접속(DBeaver, Workbench 등)하기 
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-![img.png](img.png)
+![img.png](screen/img.png)
 `bind-address` 값을 127.0.0.1 → 0.0.0.0 으로 변경
 
-![img_2.png](img_2.png)
+![img_2.png](screen/img_2.png)
 ```
 bind-address = 0.0.0.0
 :wq     # 저장 후 종료
@@ -80,8 +80,8 @@ FLUSH PRIVILEGES;
 
 이제 인텔리제이 실행 후 SQL 연결
 
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)!
+![img_5.png](screen/img_5.png)
+![img_6.png](screen/img_6.png)!
 
 연결 성공
 

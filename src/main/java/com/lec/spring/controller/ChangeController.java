@@ -19,9 +19,9 @@ public class ChangeController {
     // 데이터베이스에 JSON 데이터 저장
     @CrossOrigin
     @PostMapping("/fetch")
-    public String fetchDataAndSave() {
+    public String fetchDataAndSave(String searchdate) {
         try {
-            changeService.fetchDataAndSave();
+            changeService.fetchDataAndSave(searchdate);
             return "데이터 가져오기 성공!";
         } catch (Exception e) {
             return "가져오기 실패 에러 내용 : " + e.getMessage();

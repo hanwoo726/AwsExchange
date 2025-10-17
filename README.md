@@ -80,8 +80,8 @@ FLUSH PRIVILEGES;
 
 이제 인텔리제이 실행 후 SQL 연결
 
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)!
 
 연결 성공
 

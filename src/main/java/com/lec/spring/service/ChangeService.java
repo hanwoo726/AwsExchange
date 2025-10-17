@@ -32,41 +32,12 @@ public class ChangeService {
 
     }
 
-    public void fetchLast7Days() throws IOException {
-        LocalDate current = LocalDate.now().minusDays(1);  // 오늘 빼고 어제부터 시작
-
-        for (int i = 0; i < 7; i++) {
-            // 주말 보정: 토요일, 일요일이면 금요일로 이동
-            while (current.getDayOfWeek() == DayOfWeek.SATURDAY ||
-                    current.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                current = current.minusDays(1);
-            }
-
-            String searchDate = current.format(DateTimeFormatter.BASIC_ISO_DATE);
-
-            System.out.println("📅 Fetching date: " + searchDate);
-
-            // 기존 메서드 재사용 (수정하지 않음)
-            fetchDataAndSave(searchDate);
-
-            // 하루 전으로 이동
-            current = current.minusDays(1);
-
-            // API 과부하 방지 (필요시)
-            try {
-                Thread.sleep(500); // 0.5초 대기
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-    }
-
-    public void fetchDataAndSave(String searchDate) throws IOException {
+    public void fetchDataAndSave() throws IOException {
         String url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
 
         String uri = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("authkey", "55TnvkQvihWfjLkS2RLroNZoIpIKVmri")
-                .queryParam("searchdate",searchDate)
+                .queryParam("searchdate","20251016")
                 .queryParam("data", "AP01")
                 .toUriString();
 

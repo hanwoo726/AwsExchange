@@ -18,11 +18,6 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-- **API:** 
-
-- **실시간 채팅:** WebSocket 기반 실시간 채팅 기능 구현
-    - React 프론트엔드 + Spring Boot 백엔드 연결
-    - 사용자별 닉네임/익명 채팅 가능
 - ## 3️⃣ 주요 기능
 
 | 기능 | 설명 |
@@ -35,6 +30,41 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
+## 🐧 MySQL 설치 (Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install mysql-server -y
+sudo systemctl status mysql
+```
+
+## 🗝 MySQL 외부 접속 허용 설정 (AWS EC2)
+
+AWS EC2에 설치된 MySQL에 외부에서 접속(DBeaver, Workbench 등)하기 위해서는 아래 설정이 필요합니다.
+
+### 1️⃣ MySQL 설정 파일 수정
+```bash
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+![img.png](img.png)
+`bind-address` 값을 127.0.0.1 → 0.0.0.0 으로 변경
+
+![img_2.png](img_2.png)
+```
+bind-address = 0.0.0.0
+```
+
+### 2️⃣ MySQL 재시작
+```bash
+sudo systemctl restart mysql
+```
+
+### 3️⃣ root 계정 외부 접속 허용
+```sql
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '비밀번호';
+FLUSH PRIVILEGES;
+```
 
 이번 프로젝트는 개인프로젝트로 REACT와 JPA를 활용한 하루 환율 주기 사이트를 진행해보았습니다.
 AWS EC2 인스턴스를 생성하여 서버를 열었고 MobaXterm 터미널에 

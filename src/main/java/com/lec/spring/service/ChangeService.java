@@ -36,7 +36,7 @@ public class ChangeService {
         String url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
 
         String uri = UriComponentsBuilder.fromHttpUrl(url)
-                .queryParam("authkey", "55TnvkQvihWfjLkS2RLroNZoIpIKVmri")
+                    .queryParam("authkey", "55TnvkQvihWfjLkS2RLroNZoIpIKVmri")
                 .queryParam("searchdate","20251016")
                 .queryParam("data", "AP01")
                 .toUriString();
@@ -89,7 +89,7 @@ public class ChangeService {
 
     // 모든 ExChange 데이터를 반환
     public List<ExChange> getAllExchangeData() {
-        return changeRepository.findAll();
+        return changeRepository.findAllByOrderByCreatedAtAsc();
     }
 
     public List<ExChange> findExChange(String name){

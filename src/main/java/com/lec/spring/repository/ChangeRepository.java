@@ -13,4 +13,5 @@ public interface ChangeRepository extends JpaRepository<ExChange, Long> {
 
     List<ExChange> findBycurNameAndCreatedAt(String curName, LocalDate createdAt);
 
+    List<ExChange> findAllByOrderByCreatedAtAsc();  // 오름차순 리스트 정렬
 }

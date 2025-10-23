@@ -30,29 +30,107 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-메인 화면
-![img.png](img.png)
-![Main.gif](screen%2FMain.gif)
+[//]: # (메인 화면)
 
-환율 그래프
-![img_1.png](img_1.png)
-![chart.gif](screen%2Fchart.gif)
+[//]: # (![img.png]&#40;img.png&#41;)
 
-환율 계산기
-![img_5.png](img_5.png)
-![Cal.gif](screen%2FCal.gif)
-로그인
-![img_2.png](img_2.png)
-![Login.gif](screen%2FLogin.gif) 실패 시 ![login2.gif](screen%2Flogin2.gif)
+[//]: # (![Main.gif]&#40;screen%2FMain.gif&#41;)
 
-채팅창
-![img_3.png](img_3.png)
-![chat.gif](screen%2Fchat.gif)
-![chat2.gif](screen%2Fchat2.gif)
+[//]: # ()
+[//]: # (환율 그래프)
 
-회원 가입
-![img_4.png](img_4.png)
-![join (3).gif](screen%2Fjoin%20%283%29.gif)
+[//]: # (![img_1.png]&#40;img_1.png&#41;)
+
+[//]: # (![chart.gif]&#40;screen%2Fchart.gif&#41;)
+
+[//]: # ()
+[//]: # (환율 계산기)
+
+[//]: # (![img_5.png]&#40;img_5.png&#41;)
+
+[//]: # (![Cal.gif]&#40;screen%2FCal.gif&#41;)
+
+[//]: # (로그인)
+
+[//]: # (![img_2.png]&#40;img_2.png&#41;)
+
+[//]: # (![Login.gif]&#40;screen%2FLogin.gif&#41; 실패 시 ![login2.gif]&#40;screen%2Flogin2.gif&#41;)
+
+[//]: # ()
+[//]: # (채팅창)
+
+[//]: # (![img_3.png]&#40;img_3.png&#41;)
+
+[//]: # (![chat.gif]&#40;screen%2Fchat.gif&#41;)
+
+[//]: # (![chat2.gif]&#40;screen%2Fchat2.gif&#41;)
+
+[//]: # ()
+[//]: # (회원 가입)
+
+[//]: # (![img_4.png]&#40;img_4.png&#41;)
+
+[//]: # (![join &#40;3&#41;.gif]&#40;screen%2Fjoin%20%283%29.gif&#41;)
+
+## 🏠 메인 화면
+> React + Spring Boot로 구성된 기본 메인 페이지입니다.
+
+| 메인 페이지 | 동작 화면 |
+|--------------|-----------|
+| ![img.png](img.png) | ![Main.gif](screen/Main.gif) |
+
+---
+
+## 📈 환율 그래프
+> RestTemplate을 활용하여 공공데이터 환율 API(JSON)를 SQL에 자동 저장하고,  
+> 최근 7일 간 환율 변동을 LineChart로 시각화했습니다.
+
+| 그래프 | 동작 화면 |
+|---------|-----------|
+| ![img_1.png](img_1.png) | ![chart.gif](screen/chart.gif) |
+
+---
+
+## 💰 환율 계산기
+> 선택한 국가 통화 단위에 맞춰 실시간 계산이 가능합니다.
+
+| 계산기 | 동작 화면 |
+|---------|-----------|
+| ![img_5.png](img_5.png) | ![Cal.gif](screen/Cal.gif) |
+
+---
+
+## 🔐 로그인
+> Spring Security + JWT 기반 로그인 기능을 구현했습니다.  
+> 로그인 실패 시 에러 메시지와 함께 재시도 가능하도록 구성했습니다.
+
+| 로그인 성공 | 로그인 실패 |
+|--------------|-------------|
+| ![img_2.png](img_2.png) | ![login2.gif](screen/login2.gif) |
+| ![Login.gif](screen/Login.gif) |  |
+
+---
+
+## 💬 실시간 채팅
+> WebSocket 기반으로 사용자 간 실시간 채팅이 가능합니다.  
+> 로그인된 사용자만 입장할 수 있으며, 닉네임이 표시됩니다.
+
+| 채팅창 | 동작 화면 |
+|---------|-----------|
+| ![img_3.png](img_3.png) | ![chat.gif](screen/chat.gif) |
+|  | ![chat2.gif](screen/chat2.gif) |
+
+---
+
+## 👤 회원가입
+> 간단한 정보 입력으로 회원 등록이 가능합니다.  
+> 비회원 접근 시 자동으로 회원가입 페이지로 리디렉션됩니다.
+
+| 회원가입 화면 | 동작 화면 |
+|----------------|-----------|
+| ![img_4.png](img_4.png) | ![join (3).gif](screen/join%20(3).gif) |
+
+---
 
 ## 🐧 MySQL 설치 (Ubuntu)
 

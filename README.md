@@ -77,8 +77,8 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 ## 🏠 메인 화면
 
 <p align="center">
-  <img src="img.png" width="420"/>
-  <img src="screen/Main.gif" width="420"/>
+  <img src="img.png" width="630"/>
+  <img src="screen/Main.gif" width="630"/>
 </p>
 
 ---
@@ -86,8 +86,8 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 ## 📈 환율 그래프
 
 <p align="center">
-  <img src="img_1.png" width="420"/>
-  <img src="screen/chart.gif" width="420"/>
+  <img src="img_1.png" width="630"/>
+  <img src="screen/chart.gif" width="630"/>
 </p>
 
 ---
@@ -95,8 +95,8 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 ## 💰 환율 계산기
 
 <p align="center">
-  <img src="img_5.png" width="420"/>
-  <img src="screen/Cal.gif" width="420"/>
+  <img src="img_5.png" width="630"/>
+  <img src="screen/Cal.gif" width="630"/>
 </p>
 
 ---
@@ -107,12 +107,12 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 > 로그인 실패 시 에러 메시지와 함께 재시도 가능하도록 구성했습니다.
 
 <p align="center">
-  <img src="img_2.png" width="420"/>
-  <img src="screen/Login.gif" width="420"/>
+  <img src="img_2.png" width="630"/>
+  <img src="screen/Login.gif" width="630"/>
 </p>
 
 <p align="center">
-  <img src="screen/login2.gif" width="420"/>
+  <img src="screen/login2.gif" width="630"/>
 </p>
 
 ---
@@ -123,12 +123,12 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 > 로그인된 사용자만 입장할 수 있으며, 닉네임이 표시됩니다.
 
 <p align="center">
-  <img src="img_3.png" width="420"/>
-  <img src="screen/chat.gif" width="420"/>
+  <img src="img_3.png" width="630"/>
+  <img src="screen/chat.gif" width="630"/>
 </p>
 
 <p align="center">
-  <img src="screen/chat2.gif" width="420"/>
+  <img src="screen/chat2.gif" width="630"/>
 </p>
 
 ---
@@ -139,8 +139,8 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 > 비회원 접근 시 자동으로 회원가입 페이지로 리디렉션됩니다.
 
 <p align="center">
-  <img src="img_4.png" width="420"/>
-  <img src="screen/join%20(3).gif" width="420"/>
+  <img src="img_4.png" width="630"/>
+  <img src="screen/join%20(3).gif" width="630"/>
 </p>
 
 ---

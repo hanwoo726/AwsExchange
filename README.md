@@ -48,7 +48,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 회원 가입
 ![img_4.png](img_4.png)
-![join (3).gif](..%2F..%2F..%2FUsers%2Fhanwo%2FDownloads%2Fjoin%20%283%29.gif)
+![join (3).gif](screen%2Fjoin%20%283%29.gif)
 
 ## 🐧 MySQL 설치 (Ubuntu)
 

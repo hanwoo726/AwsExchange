@@ -32,25 +32,23 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 메인 화면
 ![img.png](img.png)
-[ScreenRec_2025-10-23 19-35-13.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-35-13.mp4)
+
 
 환율 그래프
 ![img_1.png](img_1.png)
-[ScreenRec_2025-10-23 19-37-02.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-37-02.mp4)
+
 환율 계산기
 ![img_5.png](img_5.png)
 
 로그인
 ![img_2.png](img_2.png)
-[ScreenRec_2025-10-23 19-43-09.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-43-09.mp4)
-[ScreenRec_2025-10-23 19-43-39.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-43-39.mp4)
+
 채팅창
 ![img_3.png](img_3.png)
-[ScreenRec_2025-10-23 19-40-25.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-40-25.mp4)
-[ScreenRec_2025-10-23 19-57-45.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2FScreenRec_2025-10-23%2019-57-45.mp4)
+
 회원 가입
 ![img_4.png](img_4.png)
-[join.mp4](..%2F..%2F..%2FUsers%2Fhanwo%2FPictures%2FReact2%2Fjoin.mp4)
+![join (3).gif](..%2F..%2F..%2FUsers%2Fhanwo%2FDownloads%2Fjoin%20%283%29.gif)
 
 ## 🐧 MySQL 설치 (Ubuntu)
 

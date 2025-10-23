@@ -81,6 +81,12 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
   <img src="screen/Main.gif" width="630"/>
 </p>
 
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
+
 ---
 
 ## 📈 환율 그래프
@@ -89,6 +95,12 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
   <img src="img_1.png" width="630"/>
   <img src="screen/chart.gif" width="630"/>
 </p>
+
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
 
 ---
 
@@ -99,12 +111,15 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
   <img src="screen/Cal.gif" width="630"/>
 </p>
 
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
+
 ---
 
 ## 🔐 로그인
-
-> Spring Security + JWT 기반 로그인 기능을 구현했습니다.  
-> 로그인 실패 시 에러 메시지와 함께 재시도 가능하도록 구성했습니다.
 
 <p align="center">
   <img src="img_2.png" width="630"/>
@@ -115,12 +130,15 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
   <img src="screen/login2.gif" width="630"/>
 </p>
 
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
+
 ---
 
 ## 💬 실시간 채팅
-
-> WebSocket 기반으로 사용자 간 실시간 채팅이 가능합니다.  
-> 로그인된 사용자만 입장할 수 있으며, 닉네임이 표시됩니다.
 
 <p align="center">
   <img src="img_3.png" width="630"/>
@@ -131,17 +149,26 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
   <img src="screen/chat2.gif" width="630"/>
 </p>
 
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
+
 ---
 
 ## 👤 회원가입
-
-> 간단한 정보 입력으로 회원 등록이 가능합니다.  
-> 비회원 접근 시 자동으로 회원가입 페이지로 리디렉션됩니다.
 
 <p align="center">
   <img src="img_4.png" width="630"/>
   <img src="screen/join%20(3).gif" width="630"/>
 </p>
+
+### 🔧 기술 설명
+- 
+
+### 💭 힘들었던 점
+- 
 
 ---
 

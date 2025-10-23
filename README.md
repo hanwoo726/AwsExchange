@@ -32,19 +32,23 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 메인 화면
 ![img.png](img.png)
-
+![Main.gif](screen%2FMain.gif)
 
 환율 그래프
 ![img_1.png](img_1.png)
+![chart.gif](screen%2Fchart.gif)
 
 환율 계산기
 ![img_5.png](img_5.png)
-
+![Cal.gif](screen%2FCal.gif)
 로그인
 ![img_2.png](img_2.png)
+![Login.gif](screen%2FLogin.gif) 실패 시 ![login2.gif](screen%2Flogin2.gif)
 
 채팅창
 ![img_3.png](img_3.png)
+![chat.gif](screen%2Fchat.gif)
+![chat2.gif](screen%2Fchat2.gif)
 
 회원 가입
 ![img_4.png](img_4.png)

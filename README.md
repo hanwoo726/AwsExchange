@@ -233,6 +233,21 @@ FLUSH PRIVILEGES;
 JPA 기반 삽입/수정/삭제에 사용됩니다.
 
 
+---
+
+## 🧠 느낀 점 / 회고
+
+>  
+>
+
+- 비동기 통신과 WebSocket의 차이를 명확히 이해하게 되었음
+- AWS EC2 서버 구축 및 DB 연결 과정에서 배포 구조를 깊게 학습함
+- React + Spring Boot 연동 시 발생하는 CORS 문제를 직접 해결하며 백엔드 이해도 향상
+- 실시간 데이터 반영 로직 설계의 중요성을 느낌
+
+---
+
+
 ## ⚙️ 기술 스택
 
 | **Front-End** | **Back-End** | **Infra / Tool** | **Version Control** |
@@ -246,5 +261,9 @@ JPA 기반 삽입/수정/삭제에 사용됩니다.
 | ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) | ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white) | ![AWS](https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white) |  |
 
 ---
+
+## 🌍 링크
+- 🔗 **공공데이터 API:** [한국수출입은행 환율 API](https://www.koreaexim.go.kr/site/program/financial/exchangeJSON)
+- 🧠 **프로젝트 이름:** `AwsExchange`
 
 

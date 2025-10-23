@@ -72,63 +72,76 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 [//]: # (![join &#40;3&#41;.gif]&#40;screen%2Fjoin%20%283%29.gif&#41;)
 
-## 🏠 메인 화면
-> React + Spring Boot로 구성된 기본 메인 페이지입니다.
+---
 
-| 메인 페이지 | 동작 화면 |
-|--------------|-----------|
-| ![img.png](img.png) | ![Main.gif](screen/Main.gif) |
+## 🏠 메인 화면
+
+<p align="center">
+  <img src="img.png" width="420"/>
+  <img src="screen/Main.gif" width="420"/>
+</p>
 
 ---
 
 ## 📈 환율 그래프
-> RestTemplate을 활용하여 공공데이터 환율 API(JSON)를 SQL에 자동 저장하고,  
-> 최근 7일 간 환율 변동을 LineChart로 시각화했습니다.
 
-| 그래프 | 동작 화면 |
-|---------|-----------|
-| ![img_1.png](img_1.png) | ![chart.gif](screen/chart.gif) |
+<p align="center">
+  <img src="img_1.png" width="420"/>
+  <img src="screen/chart.gif" width="420"/>
+</p>
 
 ---
 
 ## 💰 환율 계산기
-> 선택한 국가 통화 단위에 맞춰 실시간 계산이 가능합니다.
 
-| 계산기 | 동작 화면 |
-|---------|-----------|
-| ![img_5.png](img_5.png) | ![Cal.gif](screen/Cal.gif) |
+<p align="center">
+  <img src="img_5.png" width="420"/>
+  <img src="screen/Cal.gif" width="420"/>
+</p>
 
 ---
 
 ## 🔐 로그인
+
 > Spring Security + JWT 기반 로그인 기능을 구현했습니다.  
 > 로그인 실패 시 에러 메시지와 함께 재시도 가능하도록 구성했습니다.
 
-| 로그인 성공 | 로그인 실패 |
-|--------------|-------------|
-| ![img_2.png](img_2.png) | ![login2.gif](screen/login2.gif) |
-| ![Login.gif](screen/Login.gif) |  |
+<p align="center">
+  <img src="img_2.png" width="420"/>
+  <img src="screen/Login.gif" width="420"/>
+</p>
+
+<p align="center">
+  <img src="screen/login2.gif" width="420"/>
+</p>
 
 ---
 
 ## 💬 실시간 채팅
+
 > WebSocket 기반으로 사용자 간 실시간 채팅이 가능합니다.  
 > 로그인된 사용자만 입장할 수 있으며, 닉네임이 표시됩니다.
 
-| 채팅창 | 동작 화면 |
-|---------|-----------|
-| ![img_3.png](img_3.png) | ![chat.gif](screen/chat.gif) |
-|  | ![chat2.gif](screen/chat2.gif) |
+<p align="center">
+  <img src="img_3.png" width="420"/>
+  <img src="screen/chat.gif" width="420"/>
+</p>
+
+<p align="center">
+  <img src="screen/chat2.gif" width="420"/>
+</p>
 
 ---
 
 ## 👤 회원가입
+
 > 간단한 정보 입력으로 회원 등록이 가능합니다.  
 > 비회원 접근 시 자동으로 회원가입 페이지로 리디렉션됩니다.
 
-| 회원가입 화면 | 동작 화면 |
-|----------------|-----------|
-| ![img_4.png](img_4.png) | ![join (3).gif](screen/join%20(3).gif) |
+<p align="center">
+  <img src="img_4.png" width="420"/>
+  <img src="screen/join%20(3).gif" width="420"/>
+</p>
 
 ---
 

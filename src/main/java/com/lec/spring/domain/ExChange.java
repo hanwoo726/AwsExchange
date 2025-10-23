@@ -1,5 +1,6 @@
 package com.lec.spring.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,6 +15,7 @@ import lombok.*;
 public class ExChange extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     Long id;
 
     @JsonProperty("cur_nm") // 이름

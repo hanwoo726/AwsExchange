@@ -58,3 +58,8 @@ VALUES
     ('940',  '950.28',  '931.47',  '일본 엔',   '2025-10-15', 'JPY'),
     ('1428', '1442.68', '1414.11', '미국 달러', '2025-10-15', 'USD');
 
+select * from exchange;
+
+UPDATE exchange SET
+                    exchange.curName = 'eur'
+where exchange.curName = '유로';

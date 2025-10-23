@@ -145,6 +145,8 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
+MobaXterm, InteliJ MySQL 연결
+
 ## 🐧 MySQL 설치 (Ubuntu)
 
 ```bash
@@ -203,8 +205,19 @@ FLUSH PRIVILEGES;
 해당 계정은 IntelliJ (Spring Boot)에서 데이터베이스 연결 및  
 JPA 기반 삽입/수정/삭제에 사용됩니다.
 
-이번 프로젝트는 개인프로젝트로 REACT와 JPA를 활용한 하루 환율 주기 사이트를 진행해보았습니다.
-AWS EC2 인스턴스를 생성하여 서버를 열었고 MobaXterm 터미널에 
-JDK설치,AWS EC2 프리티어에서 메모리 늘리기, SQL설치를 진행 한 후
-git hub Repository clone을 받은 후 간단하게 graldew 권한 설정 및 실행파일 변경, 빌드를 진행하였습니다.
+
+## ⚙️ 기술 스택
+
+| **Front-End** | **Back-End** | **Infra / Tool** | **Version Control** |
+|----------------|---------------|------------------|----------------------|
+| ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) | ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white) | ![AWS EC2](https://img.shields.io/badge/Amazon_EC2-FF9900?style=for-the-badge&logo=amazon-ec2&logoColor=white) | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white) | ![MobaXterm](https://img.shields.io/badge/MobaXterm-00A98F?style=for-the-badge&logo=linux&logoColor=white) | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | ![Spring JPA](https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white) | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) |  |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white) | ![AWS RDS](https://img.shields.io/badge/Amazon_RDS-527FFF?style=for-the-badge&logo=amazon-rds&logoColor=white) |  |
+| ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) | ![RestTemplate](https://img.shields.io/badge/RestTemplate-0A66C2?style=for-the-badge&logo=java&logoColor=white) | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) |  |
+| ![Recharts](https://img.shields.io/badge/Recharts-0088FE?style=for-the-badge&logo=recharts&logoColor=white) | ![WebSocket](https://img.shields.io/badge/WebSocket-00897B?style=for-the-badge&logo=websocket&logoColor=white) | ![MobaXterm_Terminal](https://img.shields.io/badge/Linux_Terminal-333333?style=for-the-badge&logo=gnometerminal&logoColor=white) |  |
+| ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) | ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white) | ![AWS](https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white) |  |
+
+---
+
 

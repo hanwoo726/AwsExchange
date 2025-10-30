@@ -79,27 +79,35 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 </p>
 
 ### 🔧 기술 설명
-- 상단 네비게이션 영역에는 Home, 미국 환율, 유럽 환율, 일본 환율, 환율 계산기, 채팅 메뉴가 위치해 있습니다.
-우측에는 로그인/회원가입 메뉴가 있고, 로그인 시 사용자 이름과 로그아웃 메뉴가 표시됩니다.
-각 메뉴는 react-router-dom의 Link를 사용하여 페이지가 전환되도록 구현했습니다.
+- 상단 네비게이션 영역에 Home, 미국/유럽/일본 환율, 환율 계산기, 채팅 메뉴를 배치했습니다.
+우측에는 로그인/회원가입 메뉴, 로그인 시 사용자명 + 로그아웃이 표시됩니다.
+메뉴 이동 시 Link를 사용하여 **새로고침 없이 페이지 전환이 가능합니다.
 
 
-- 메인화면에서는 총 3가지 환율 리스트를 주말을 제외한 오래된 순 부터 볼 수 있게 끔 작성 했으며,
-미국,일본,유로 순으로 리스트를 짜봤습니다. 한 화면에 총10개의 데이터를 볼 수 있고 페이지네이션으로 다음 목록을 확인 할 수 있습니다.
+- 메인 화면에서는 주말 제외, 오래된 순 → 최신 순으로 3종 환율 리스트(USD, JPY, EUR)를 확인할 수 있습니다.
+한 화면에 10개의 데이터가 표시되며, **페이지네이션(Pagination)**으로 리스트를 탐색할 수 있습니다.
+셀렉트 박스를 통해 원하는 통화만 필터링하여 조회할 수 있습니다.
+    ```javascript
+    <option value={`${SERVER_HOST}/change/list`}>전체항목</option>
+    <option value={`${SERVER_HOST}/change/usd`}>미국 환율</option>
+    <option value={`${SERVER_HOST}/change/eur`}>유럽 환율</option>
+    <option value={`${SERVER_HOST}/change/jpy(100)`}>일본 환율</option>
 
-    공공데이터 API를 활용해 메인화면 컴포넌트가 렌더링 시, 비동기 방식을 이용하여 서버에 데이터를 가져오는 방식을 사용했습니다
-    UriComponentsBuilder를 사용해 API 엔드포인트와 파라미터를 동적으로 조립하고,
-    RestTemplate으로 외부 공공데이터 API를 호출하여 JSON 데이터를 가져옵니다.
+- 공공데이터 API를 활용해 환율 정보를 수집하고,
+  UriComponentsBuilder 로 API 엔드포인트 및 파라미터를 동적으로 구성한 뒤
+  RestTemplate 을 통해 외부 API를 호출하여 JSON 데이터를 서버에서 가져옵니다.
+  가져온 데이터는 파싱 후 DB에 저장되며,
+  프론트에서는 비동기 요청(Axios) 으로 저장된 데이터를 조회하여 화면에 표시하도록 구현했습니다.
 
-    ```java
-    String uri = UriComponentsBuilder.fromHttpUrl(url)
-    .queryParam("authkey", "키값")  // API 키값 서식
-      .queryParam("searchdate","")
-      .queryParam("data", "AP01")
-      .toUriString();     
+  ```java
+  String uri = UriComponentsBuilder.fromHttpUrl(url)
+  .queryParam("authkey", "키값")  // API 키값 서식
+    .queryParam("searchdate","")
+    .queryParam("data", "AP01")
+    .toUriString();     
 
-   List<ExChange> exchangeData = filterExchangeData(jsonResponse);
-    changeRepository.saveAll(exchangeData);  ```
+   List<ExChange> exchangeData = filterExchangeData(jsonResponse);  // Json 데이터를 배열로 만듬
+  changeRepository.saveAll(exchangeData); // 데이터 저장
 
 
 ### 💭 힘들었던 점

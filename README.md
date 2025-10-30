@@ -90,15 +90,16 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
     공공데이터 API를 활용해 메인화면 컴포넌트가 렌더링 시, 비동기 방식을 이용하여 서버에 데이터를 가져오는 방식을 사용했습니다
     UriComponentsBuilder를 사용해 API 엔드포인트와 파라미터를 동적으로 조립하고,
     RestTemplate으로 외부 공공데이터 API를 호출하여 JSON 데이터를 가져옵니다.
+
     ```java
-String uri = UriComponentsBuilder.fromHttpUrl(url)
+    String uri = UriComponentsBuilder.fromHttpUrl(url)
     .queryParam("authkey", "키값")  // API 키값 서식
       .queryParam("searchdate","")
       .queryParam("data", "AP01")
       .toUriString();     
 
    List<ExChange> exchangeData = filterExchangeData(jsonResponse);
-    changeRepository.saveAll(exchangeData);  
+    changeRepository.saveAll(exchangeData);  ```
 
 
 ### 💭 힘들었던 점

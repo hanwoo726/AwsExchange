@@ -74,7 +74,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 🏠 메인 화면
+## **1. 메인 화면**
 
 <p align="center">
   <img src="img.png" width="630"/>
@@ -89,7 +89,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 📈 환율 그래프
+## **2. 환율 그래프**
 
 <p align="center">
   <img src="img_1.png" width="630"/>
@@ -104,7 +104,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 💰 환율 계산기
+## **3. 환율 계산기**
 
 <p align="center">
   <img src="img_5.png" width="630"/>
@@ -138,7 +138,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 💬 실시간 채팅
+## **5. 실시간 채팅**
 
 <p align="center">
   <img src="img_3.png" width="630"/>
@@ -186,7 +186,7 @@ sudo systemctl status mysql
 
 AWS EC2에 설치된 MySQL에 외부에서 접속(DBeaver, Workbench 등)하기 위해서는 아래 설정이 필요합니다.
 
-### 1️⃣ MySQL 설정 파일 수정
+### **1.MySQL 설정 파일 수정**
 ```bash
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
@@ -200,12 +200,12 @@ bind-address = 0.0.0.0
 :wq     # 저장 후 종료
 ```
 
-### 2️⃣ MySQL 재시작
+### **2.MySQL 재시작**
 ```bash
 sudo systemctl restart mysql
 ```
 
-### 3️⃣ root 계정 외부 접속 허용
+### **3.root 계정 외부 접속 허용**
 ### 👤 MySQL 전용 계정 생성 및 권한 부여
 
 운영과 보안을 위해 root 계정이 아닌, 별도 사용자 계정을 생성하여  

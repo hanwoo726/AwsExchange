@@ -71,7 +71,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## **1. 메인 화면**
+### **1. 메인 화면**
 
 <p align="center">
   <img src="img.png" width="630"/>
@@ -86,7 +86,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## **2. 환율 그래프**
+### **2. 환율 그래프**
 
 <p align="center">
   <img src="img_1.png" width="630"/>
@@ -101,7 +101,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## **3. 환율 계산기**
+### **3. 환율 계산기**
 
 <p align="center">
   <img src="img_5.png" width="630"/>
@@ -116,7 +116,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 🔐 로그인
+### **4.로그인**
 
 <p align="center">
   <img src="img_2.png" width="630"/>
@@ -135,7 +135,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## **5. 실시간 채팅**
+### **5. 실시간 채팅**
 
 <p align="center">
   <img src="img_3.png" width="630"/>
@@ -154,7 +154,7 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ---
 
-## 👤 회원가입
+### **6.회원가입**
 
 <p align="center">
   <img src="img_4.png" width="630"/>

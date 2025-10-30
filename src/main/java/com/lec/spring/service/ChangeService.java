@@ -36,8 +36,8 @@ public class ChangeService {
         String url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
 
         String uri = UriComponentsBuilder.fromHttpUrl(url)
-                    .queryParam("authkey", "55TnvkQvihWfjLkS2RLroNZoIpIKVmri")
-                .queryParam("searchdate","20251016")
+                    .queryParam("authkey", "키값")
+                .queryParam("searchdate","")
                 .queryParam("data", "AP01")
                 .toUriString();
 

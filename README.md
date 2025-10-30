@@ -79,7 +79,27 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 </p>
 
 ### 🔧 기술 설명
-- 
+- 상단 네비게이션 영역에는 Home, 미국 환율, 유럽 환율, 일본 환율, 환율 계산기, 채팅 메뉴가 위치해 있습니다.
+우측에는 로그인/회원가입 메뉴가 있고, 로그인 시 사용자 이름과 로그아웃 메뉴가 표시됩니다.
+각 메뉴는 react-router-dom의 Link를 사용하여 페이지가 전환되도록 구현했습니다.
+
+
+- 메인화면에서는 총 3가지 환율 리스트를 주말을 제외한 오래된 순 부터 볼 수 있게 끔 작성 했으며,
+미국,일본,유로 순으로 리스트를 짜봤습니다. 한 화면에 총10개의 데이터를 볼 수 있고 페이지네이션으로 다음 목록을 확인 할 수 있습니다.
+
+    공공데이터 API를 활용해 메인화면 컴포넌트가 렌더링 시, 비동기 방식을 이용하여 서버에 데이터를 가져오는 방식을 사용했습니다
+    UriComponentsBuilder를 사용해 API 엔드포인트와 파라미터를 동적으로 조립하고,
+    RestTemplate으로 외부 공공데이터 API를 호출하여 JSON 데이터를 가져옵니다.
+    ```java
+String uri = UriComponentsBuilder.fromHttpUrl(url)
+    .queryParam("authkey", "키값")  // API 키값 서식
+      .queryParam("searchdate","")
+      .queryParam("data", "AP01")
+      .toUriString();     
+
+   List<ExChange> exchangeData = filterExchangeData(jsonResponse);
+    changeRepository.saveAll(exchangeData);  
+
 
 ### 💭 힘들었던 점
 - 

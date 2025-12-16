@@ -176,10 +176,49 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 </p>
 
 ### 🔧 기술 설명
-- 
+- 본 프로젝트에서는 JWT 기반의 로그인 인증 방식을 적용했습니다.
+  로그인 성공 시 서버에서 JWT 토큰을 발급하고,
+  이후 클라이언트는 해당 토큰을 이용해 인증이 필요한 요청을 처리하도록 구성했습니다.
+
+  Spring Security와 UserDetails, UserDetailsService 구조를 기반으로
+  사용자 인증 및 권한(Role) 정보를 관리했으며,
+  토큰에 포함된 권한 정보를 통해 접근 제어가 가능하도록 설계했습니다.
+
+  ```java
+  String authorization = request.getHeader("Authorization");
+
+  if (authorization == null || !authorization.startsWith("Bearer")) {
+  filterChain.doFilter(request, response);
+  return;
+  }
+
+  String token = authorization.split(" ")[1];
+  
+- 요청 헤더의 Authorization 값을 검사하여 JWT 토큰을 추출하고,
+  토큰이 없는 요청은 인증 처리 없이 다음 필터로 전달합니다.
+
+  ```java
+  PrincipalDetails userDetails = new PrincipalDetails(user);
+
+  Authentication authToken =
+  new UsernamePasswordAuthenticationToken(
+  userDetails, null, userDetails.getAuthorities()
+  );
+  
+  SecurityContextHolder.getContext().setAuthentication(authToken);
+  
+- JWT에서 추출한 사용자 정보를 기반으로 인증 객체를 생성하고,
+  SecurityContext에 등록하여 Spring Security가
+  로그인된 사용자로 인식하도록 구현했습니다.
+
 
 ### 💭 힘들었던 점
-- 
+- JWT 인증 방식은 초기 구현 난이도가 높아,
+  공식 문서와 예제를 참고하여 구조를 이해한 뒤
+  프로젝트에 맞게 인증 흐름을 적용했습니다.
+
+  특히 로그인 이후 토큰이 발급되고,
+  SecurityContext를 통해 인증 정보가 관리되는 흐름을 중심으로 학습했습니다.
 
 ---
 
@@ -195,10 +234,48 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 </p>
 
 ### 🔧 기술 설명
-- 
+- 사용자 간 실시간 소통을 위해 WebSocket을 이용한 채팅 기능을 구현했습니다.
+  로그인한 사용자만 채팅방에 입장할 수 있으며, 메시지는 모든 사용자에게 전달됩니다.
+  ```javascript
+    useEffect(() => {
+  if(!userInfo || userInfo.username === null){
+    alert("회원가입 후 이용해주세요.");
+    navigate("/join");
+  } ```
+  
+- 로그인하지 않은 사용자는 채팅 기능을 사용할 수 없도록 제한하고,
+  회원가입 페이지로 이동시키는 방식으로 접근 제어를 구현했습니다.
+
+ ```javascript useEffect(() => {
+  const ws = new WebSocket(`${HOST}/ws/chat`);
+
+  ws.onmessage = (msg) => {
+  onMessage(msg);
+  };
+
+  setWebSocket(ws);
+
+  return () => {
+  ws.close();
+  };
+  }, []); 
+  ```
+- React 컴포넌트가 마운트될 때 WebSocket 연결을 생성하고,
+  서버에서 전달되는 메시지를 실시간으로 수신하여 화면에 반영합니다.
+
+  ```javascript
+  websocket.send(`${username}: ${msg}`);
+  ```
+
+- 사용자가 메시지를 입력하고 전송 버튼을 누르면
+  WebSocket을 통해 서버로 메시지를 전송합니다.
 
 ### 💭 힘들었던 점
-- 
+- WebSocket을 활용한 실시간 채팅 구현이 처음이라 전체 흐름을 이해하는 데 어려움이 있었습니다.
+  여러 공식 문서와 예제를 참고하며 기능을 완성했습니다.
+
+- 특히 채팅 기록을 어떻게 관리하고 불러올지에 대한 설계가 가장 고민되는 부분이었고,
+  서버에 chatHistory 데이터를 저장한 뒤 fetch를 통해 불러오는 방식으로 해결했습니다.
 
 ---
 
@@ -211,6 +288,19 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 
 ### 🔧 기술 설명
 - 
+
+  ````java
+    @PostMapping("/join")
+    public String join(@RequestBody UserJoinDTO joinDTO) {
+        User user = User.builder()
+                .username(joinDTO.getUsername())
+                .password(joinDTO.getPassword())
+                .build();
+        user = userService.join(user);
+        if (user == null) return "JOIN FAILED";
+        return "JOIN OK : " + user;
+    } 
+   ````
 
 ### 💭 힘들었던 점
 - 
@@ -289,6 +379,8 @@ JPA 기반 삽입/수정/삭제에 사용됩니다.
 - AWS EC2 서버 구축 및 DB 연결 과정에서 배포 구조를 깊게 학습함
 - React + Spring Boot 연동 시 발생하는 CORS 문제를 직접 해결하며 백엔드 이해도 향상
 - 실시간 데이터 반영 로직 설계의 중요성을 느낌
+- 아직 부족한 점이 많지만 React, SpringBoot는 웹 사이트를 통해 참고 가능한 자료가 많아,
+  설계 부분에서 많은 도움이 됐고 
 
 ---
 

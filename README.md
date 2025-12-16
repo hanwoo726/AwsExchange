@@ -287,9 +287,30 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
 </p>
 
 ### 🔧 기술 설명
-- 
+- 클라이언트에서 아이디와 비밀번호를 입력 할 수 있게끔 텍스트창을 만들고
+  해당 아이디와 비밀번호를 담아 JSON 형태로 서버로 전송하는 방식을 사용했습니다.
 
-  ````java
+```javascript
+      const onJoin = (e) => {
+  e.preventDefault();
+  const username = e.target.username.value;
+  const password = e.target.password.value;
+
+  console.log(username, password);
+
+  join({username, password});
+
+  <button className="btn btn--form btn-login" type="submit">
+          Join
+  </button>
+
+}
+```
+
+- 서버에서는 클라이언트로부터 전달받은 JSON 형태의 회원가입 데이터를
+  @RequestBody를 통해 UserJoinDTO 객체로 매핑하여 처리합니다.
+
+ ````java
     @PostMapping("/join")
     public String join(@RequestBody UserJoinDTO joinDTO) {
         User user = User.builder()
@@ -300,10 +321,38 @@ WebSocket 기반의 실시간 채팅 기능을 추가했습니다.
         if (user == null) return "JOIN FAILED";
         return "JOIN OK : " + user;
     } 
-   ````
+ ````
+
+  ```java
+    public User join(User user){
+  String username = user.getUsername();
+  String password = user.getPassword();
+
+  if(userRepository.existsByUsername(username)){    // 아이디 중복 검사
+    return null;  // 회원 가입 실패
+  }
+
+  user.setUsername(user.getUsername().toUpperCase());   // 아이디 대문자 통일
+  user.setPassword(passwordEncoder.encode(password));   // 비밀번호 암호화
+  user.setRole("ROLE_MEMBER");  // 기본적으로 MEMBER 권한 부여
+  return userRepository.save(user);
+}
+```
+
+- 회원가입 요청 시, 전달받은 데이터를 DTO로 처리한 뒤 User 엔티티로 변환합니다.
+
+- 이미 존재하는 ID가 있을 경우 회원가입을 실패 처리하도록 구현했습니다.
+
+- 사용자 ID는 항상 대문자로 저장하여 대소문자 차이로 인한 중복 문제를 방지했습니다.
+
+- 비밀번호는 PasswordEncoder를 사용해 암호화한 뒤 데이터베이스에 저장합니다.
 
 ### 💭 힘들었던 점
-- 
+- 회원가입 과정에서 중복 ID 처리, 비밀번호 암호화, 권한 설정을
+  어느 계층에서 처리하는 것이 적절한지 고민이 많았습니다.
+
+- 클라이언트에서 전달되는 JSON 형태의 데이터를 서버에서 DTO로 매핑하여 처리하는 흐름을
+  이해하고 설계하는 과정이 쉽지 않았습니다.
 
 ---
 
@@ -375,12 +424,16 @@ JPA 기반 삽입/수정/삭제에 사용됩니다.
 >  
 >
 
-- 비동기 통신과 WebSocket의 차이를 명확히 이해하게 되었음
-- AWS EC2 서버 구축 및 DB 연결 과정에서 배포 구조를 깊게 학습함
-- React + Spring Boot 연동 시 발생하는 CORS 문제를 직접 해결하며 백엔드 이해도 향상
-- 실시간 데이터 반영 로직 설계의 중요성을 느낌
-- 아직 부족한 점이 많지만 React, SpringBoot는 웹 사이트를 통해 참고 가능한 자료가 많아,
-  설계 부분에서 많은 도움이 됐고 
+- 비동기 통신과 WebSocket을 실제로 구현해보며 개념 차이를 체감할 수 있었습니다.
+
+- AWS EC2 서버 구축과 DB 연결 과정이 쉽지는 않았지만,
+하나씩 해결하며 배포 구조를 이해할 수 있었습니다.
+
+- React와 Spring Boot 연동 과정에서 발생한 문제들을 직접 해결하며
+백엔드에 대한 이해도도 함께 높아졌습니다.
+
+- 아직 미숙한 부분이 많지만, 다양한 자료를 참고하며
+스스로 문제를 해결해 나가는 경험이 큰 도움이 되었습니다.
 
 ---
 
